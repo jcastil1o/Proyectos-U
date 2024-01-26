@@ -3,21 +3,23 @@ print("     Programa para conocer el tipo de variable")
 print("Ingrese algo a la consola")
 dato = input("Dato: ")
 
-def determinar_tipo_variable(valor):
-    # Determina el tipo de la variable utilizando la función type()
-    tipo = type(valor)._name_
-    return tipo
+if dato.isdigit():
+    print("Es un dato entero: ", dato)
+elif dato.replace(".", "").isdigit():
+    print("Es un dato flotante: ", dato)
+elif dato.lower() in ["true", "false"]:
+        booleano  = True 
+        print("Es un booleano: ", dato)
 
-# Solicita al usuario ingresar una variable
-entrada_usuario = input("Ingrese una variable: ")
+elif dato.startswith("[") and dato.endswith("]"):
+    lista = eval(dato)
+    if isinstance(lista, list):
+        print("Es un arreglo: ", lista)      
+    else:
+        print("Lista no valida")
+elif dato.isalpha:
+    print("Es un dato string: ", dato)
 
-# Intenta convertir la entrada del usuario a un número si es posible
-try:
-    entrada_usuario = eval(entrada_usuario)
-except:
-    pass
-
-# Determina y muestra el tipo de la variable
-tipo_variable = determinar_tipo_variable(entrada_usuario)
-print(f"El tipo de la variable es: {tipo_variable}")
+else:
+    print("Tipo de variable no encontrada")    
 ##Jonathan Castillo 0901-22-8408
