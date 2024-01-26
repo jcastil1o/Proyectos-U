@@ -5,5 +5,5 @@ Dolares = float (input("Ingrese la cantidad de Dolares ($): "))
     ##impresion de texto
 quetzales = 7.82
 conversion = Dolares * quetzales
-print(" $", Dolares, " son un total de: ", conversion)
+print(" $", Dolares, " son un total de: Q", conversion)
 ##Jonathan Castillo 0901-22-8408
