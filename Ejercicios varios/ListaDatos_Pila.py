@@ -7,12 +7,14 @@ def revertir_lista(lista):
         ##for para cambiar el orden
         pila.append(elemento)
             ##Extraccion de elementos de la lista
-        lista_revertida = []
-        while pila:
-            lista_revertida.append(pila.pop())
+        
+##Dejar espacio para separar el fin del ciclo con otro
+    lista_revertida = []
+    while pila:
+        lista_revertida.append(pila.pop())
                                       ##Ingreso de los elementos de la lista original
                         ##Llamada a la anterior lista
-        return lista_revertida
+    return lista_revertida
         ##Muestra la lista nueva
     
         
