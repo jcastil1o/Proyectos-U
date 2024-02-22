@@ -1,11 +1,11 @@
 class Nodo:
-    def _init_(self, valor):
+    def __init__(self, valor):
         self.valor = valor
         self.izquierda = None
         self.derecha = None
 
 class ArbolBinario:
-    def _init_(self, raiz):
+    def __init__(self, raiz):
         self.raiz = raiz
 
     def agregar(self, valor, nodo=None):

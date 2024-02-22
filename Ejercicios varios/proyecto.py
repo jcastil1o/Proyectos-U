@@ -1,61 +1,57 @@
 class Nodo:
-    def _init_(self, valor):
+    def __init__(self, valor):
         self.valor = valor
-        self.izquierdo = None
-        self.derecho = None
-
+        self.izquierda = None
+        self.derecha = None
 
 class ArbolBinario:
-    def _init_(self):
-        self.raiz = None
+    def __init__(self, raiz):
+        self.raiz = raiz
 
-    def agregar_nodo(self, valor):
-        nuevo_nodo = Nodo(valor)
+    def agregar(self, valor, nodo=None):
+        if nodo is None:
+            nodo = self.raiz
 
-        if self.raiz is None:
-            self.raiz = nuevo_nodo
-            return
-
-        nodo_actual = self.raiz
-        while True:
-            if valor < nodo_actual.valor:
-                if nodo_actual.izquierdo is None:
-                    nodo_actual.izquierdo = nuevo_nodo
-                    return
-                else:
-                    nodo_actual = nodo_actual.izquierdo
+        if valor < nodo.valor:
+            if nodo.izquierda is None:
+                nodo.izquierda = Nodo(valor)
             else:
-                if nodo_actual.derecho is None:
-                    nodo_actual.derecho = nuevo_nodo
-                    return
-                else:
-                    nodo_actual = nodo_actual.derecho
+                self.agregar(valor, nodo.izquierda)
+        else:
+            if nodo.derecha is None:
+                nodo.derecha = Nodo(valor)
+            else:
+                self.agregar(valor, nodo.derecha)
 
-    def imprimir_arbol(self):
-        self._imprimir_arbol_inorden(self.raiz)
+    def generar_dot(self, nodo=None):
+        if nodo is None:
+            nodo = self.raiz
 
-    def _imprimir_arbol_inorden(self, nodo):
-        if nodo is not None:
-            self._imprimir_arbol_inorden(nodo.izquierdo)
-            print(nodo.valor)
-            self._imprimir_arbol_inorden(nodo.derecho)
+        dot = ''
+        if nodo.izquierda:
+            dot += f'"{nodo.valor}" -> "{nodo.izquierda.valor}"\n'
+            dot += self.generar_dot(nodo.izquierda)
+        if nodo.derecha:
+            dot += f'"{nodo.valor}" -> "{nodo.derecha.valor}"\n'
+            dot += self.generar_dot(nodo.derecha)
+        return dot
 
-
-# Ejemplo de uso
-arbol = ArbolBinario()
+# Crear un árbol binario con un nodo raíz
+arbol = ArbolBinario(Nodo("Programa Madre"))
 
 # Agregar nodos al árbol
-arbol.agregar_nodo("Programa madre")
-arbol.agregar_nodo("Ventas")
-arbol.agregar_nodo("Compras")
-arbol.agregar_nodo("Ventas semanales")
-arbol.agregar_nodo("Facturaciones")
-arbol.agregar_nodo("Compras totales en tienda")
-arbol.agregar_nodo("VistaUsuarioy")
-arbol.agregar_nodo("Stock en tienda")
-arbol.agregar_nodo("Comparacion de ventas")
-arbol.agregar_nodo("Inventario \"Final\"")
-arbol.agregar_nodo("Inventario \"Actual\"")
-arbol.agregar_nodo("Determinacion de costos")
-arbol.agregar_nodo("Ganancia Real")
-arbol.agregar_nodo("Desperdicio")
+arbol.agregar("Subprograma de Inventario")
+arbol.agregar("Subprograma de Ventas")
+arbol.agregar("Subprograma de Inventario Final")
+arbol.agregar("Costo Final de Ventas")
+arbol.agregar("Costos de Mermas")
+arbol.agregar("Gastos Operativos")
+arbol.agregar("Gastos Fijos")
+
+# Generar código DOT
+dot_code = 'digraph G {\n'
+dot_code += arbol.generar_dot()
+dot_code += '}'
+
+# Imprimir el código DOT
+print(dot_code)
