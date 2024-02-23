@@ -1,7 +1,3 @@
-'''
-Escriba un programa de Python para eliminar un nodo con la clave dada en un arbol de
-busqueda binario (BST) dado.
-'''
 class TreeNode(object):
     def __init__(self, x):
         self.val = x

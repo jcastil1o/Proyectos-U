@@ -1,7 +1,3 @@
-'''
-Escriba un programa de Python para convertir los elementos de una matriz determinada en un
-arbol de busqueda binaria (BST) equilibrado en altura.
-'''
 class TreeNode(object):
     def __init__(self, x):
         self.val = x

@@ -1,7 +1,3 @@
-'''
-Escriba un programa de Python para encontrar el valor mas cercano de un valor objetivo dado
-en un arbol de busqueda binaria (BST) no vacio dado de valores unicos.
-'''
 class TreeNode(object):
     def __init__(self,x):
         self.val = x

@@ -1,14 +1,3 @@
-'''
-Escriba un programa Python para verificar si un arbol binario dado es un arbol de busqueda
-binaria (BST) valido o no.
-a. Dejeque un arbol de busqueda binaria (BST) se defina de la siguiente manera:
-    i. El subarbol izquierdo de un nodo contiene solo nodos con claves menores que la
-    clave del nodo.
-    ii. El subarbol derecho de un nodo contiene solo nodos con claves mayores que la
-    clave del nodo.
-    iii. Los subarboles izquierdo y derecho también deben ser arboles de busqueda
-    binarios.
-'''
 class TreeNode(object):
     def __init__(self,x):
         self.val = x

@@ -1,7 +1,3 @@
-'''
-Escriba un programa en Python para encontrar el k-ésimo elemento más pequeño en un árbol
-de búsqueda binario dado.
-'''
 class TreeNode(object):
     def __init__(self, x):
         self.val = x
