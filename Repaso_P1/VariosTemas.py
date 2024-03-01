@@ -44,7 +44,16 @@ class operaciones_logicas:
     def operador_or(self):
         #operacion or
         return self.numero3 or self.numero4
-
+        
+def cola_lista(cola):
+    queue = deque (cola)
+    while deque:
+        print("Dato en cola: ", queue.popleft(), "\n")
+        time.sleep(1)
+def anadir (lista):
+    pila = []
+    for elemento in lista:
+        pila.append(elemento)
 
 print("Bienvenido al programa:".center(30, '#'))
 print("1. Operadociones aritmeticas\n")
@@ -56,9 +65,6 @@ while True:
         break
     except ValueError:
         print("Ingrese una opción válida")
-    
-
-
 
 if opcion==1:
     try:
@@ -105,13 +111,6 @@ elif opcion == 3:
         except ValueError:
             print("Ingrese una opción válida")
     if opcion2 == 1:
-        pila = []
-        def cola_lista(cola):
-            queue = deque (cola)
-            while deque:
-                print("Dato en cola: ", queue.popleft(), "\n")
-                time.sleep(1)
-
         print("Ingrese una lista (SEPARADOS POR ESPACIOS)")
         lista = input()
         ordenar = [float(x) for x in lista.split()]
@@ -119,7 +118,14 @@ elif opcion == 3:
         print("Lista ordenada: ", ordenar)
         cola_lista(ordenar)
         print("Todos los datos finalmente procesados...")
-
+    if opcion2 == 2:
+        print("Agregar un elemento")
+        print("Ingrese los elementos de la lista: ")
+        lista = input()
+        print("Esta es una lista: ", lista)
+        a = input("Ingrese un numero: ")
+        lista.append(a)
+        print("Se agrego un elemento: ", lista)
 
 else:
     print("Opción no válida")
