@@ -50,10 +50,6 @@ def cola_lista(cola):
     while deque:
         print("Dato en cola: ", queue.popleft(), "\n")
         time.sleep(1)
-def anadir (lista):
-    pila = []
-    for elemento in lista:
-        pila.append(elemento)
 
 print("Bienvenido al programa:".center(30, '#'))
 print("1. Operadociones aritmeticas\n")
