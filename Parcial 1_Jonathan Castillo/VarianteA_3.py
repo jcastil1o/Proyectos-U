@@ -1,5 +1,7 @@
 """Parcial 1
     Jonathan Camilo Castillo Mendez 0901 - 22 - 8408 """
+"""Parcial 1
+    Jonathan Camilo Castillo Mendez 0901 - 22 - 8408 """
 
 #Lista como parametro y devolver la suma de todos los elementos
 def anadir (lista):
@@ -17,8 +19,10 @@ except ValueError:
 i = int
 i = 0
 longitud = len(lista)
+mitad = longitud%2
 for x in range (i<=longitud):
-    suma = float
-    indice = lista.index(i) + lista.index(i+1)
-    print(suma)
+    if (mitad>=0):
+        suma = float
+        indice = lista.index(i) + lista.index(i+1)
+        print(suma)
     break
