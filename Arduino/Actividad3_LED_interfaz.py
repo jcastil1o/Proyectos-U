@@ -22,29 +22,29 @@ def APAGAR():
 def ON_ROJO():
     #funcion LED roja
     print("Encender ROJO")
-    puerto.write('on rojo'.encode())
+    puerto.write('2'.encode())
 
 def OFF_ROJO():
     #funcion LED roja
     print("Apagar ROJO")
-    puerto.write('off rojo'.encode())
+    puerto.write('3'.encode())
 
 def ON_VERDE():
     #funcion LED verde
     print("Encender VERDE")
-    puerto.write('on verde'.encode())
+    puerto.write('4'.encode())
 
 def OFF_VERDE():
     print("Apagar VERDE")
-    puerto.write('off verde'.encode())
+    puerto.write('5'.encode())
 
 def ON_AMARILLO():
     print("Encender AMARILLO")
-    puerto.write('on amarillo'.encode())
+    puerto.write('6'.encode())
 
 def OFF_AMARILLO():
     print("Apagar AMARILLO")
-    puerto.write('off amarillo'.encode())
+    puerto.write('7'.encode())
 
 puerto = serial.Serial('COM7')
 #puerto a comunicar
