@@ -51,7 +51,7 @@ puerto = serial.Serial('COM7')
 
 pantalla = tk.Tk()
 #pantalla a usar interfaz
-pantalla.config(width=500, height=300)
+pantalla.config(width=500, height=200)
 #Tamano de pantalla
 pantalla.title("Controlar LEDs")
 #Titulo de pantalla
@@ -59,12 +59,24 @@ pantalla.title("Controlar LEDs")
 #crear un boton de accion
 encender_boton  = tk.Button(text="ENCENDER", width= 10, command= ENCENDER, background="yellow")
                     #tipo de boton  texto       tamano      accion
-encender_boton.place(x = 150, y = 10)
+encender_boton.place(x = 175, y = 10)
 #posicion del boton
 apagar_boton = tk.Button(text="APAGAR", width=10, command= APAGAR, background="gray")
                     #tipo de boton  texto       tamano      accion
-apagar_boton.place(x= 250, y= 10)
+apagar_boton.place(x= 275, y= 10)
+
+#LED ROJA
+rojo_boton = tk.Button(text="ROJO", width= 15, command= ON_ROJO, background= "red")
+rojo_boton.place(x=50, y=80)
+rojo_boton = tk.Button(text="ROJO", width= 15, command= OFF_ROJO, background= "red")
+#LED VERDE
+verde_boton = tk.Button(text="VERDE", width= 15, command= ON_VERDE, background= "green")
+verde_boton.place(x=200, y=80)
+verde_boton = tk.Button(text="VERDE", width= 15, command= OFF_VERDE, background= "green")
+#LED AMARILLO
+amarillo_boton = tk.Button(text="AMARILLO", width= 15, command= ON_AMARILLO, background= "yellow")
+amarillo_boton.place(x=350, y=80)
+amarillo_boton = tk.Button(text="AMARILLO", width= 15, command= OFF_AMARILLO, background= "yellow")
 pantalla.mainloop()
         #ciclo infinito de la ventana
-
 #puerto.close()
