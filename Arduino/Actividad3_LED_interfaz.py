@@ -35,14 +35,17 @@ def ON_VERDE():
     puerto.write('4'.encode())
 
 def OFF_VERDE():
+    #funcion LED verde
     print("Apagar VERDE")
     puerto.write('5'.encode())
 
 def ON_AMARILLO():
+    #funcion LED amarillo
     print("Encender AMARILLO")
     puerto.write('6'.encode())
 
 def OFF_AMARILLO():
+    #funcion LED amarillo
     print("Apagar AMARILLO")
     puerto.write('7'.encode())
 
@@ -55,27 +58,29 @@ pantalla.config(width=500, height=200)
 #Tamano de pantalla
 pantalla.title("Controlar LEDs")
 #Titulo de pantalla
+titulo = Label(text="Encendido de LEDs", background="white", foreground= "black", font=("Arial", 15))
+titulo.place(x= 175, y=5)
 
 #crear un boton de accion
 encender_boton  = tk.Button(text="ENCENDER", width= 10, command= ENCENDER, background="yellow")
                     #tipo de boton  texto       tamano      accion
-encender_boton.place(x = 175, y = 10)
+encender_boton.place(x = 175, y = 35)
 #posicion del boton
 apagar_boton = tk.Button(text="APAGAR", width=10, command= APAGAR, background="gray")
                     #tipo de boton  texto       tamano      accion
-apagar_boton.place(x= 275, y= 10)
+apagar_boton.place(x= 275, y= 35)
 
 #LED ROJA
 rojo_boton = tk.Button(text="ROJO", width= 15, command= ON_ROJO, background= "red")
-rojo_boton.place(x=50, y=80)
+rojo_boton.place(x=50, y=100)
 rojo_boton = tk.Button(text="ROJO", width= 15, command= OFF_ROJO, background= "red")
 #LED VERDE
 verde_boton = tk.Button(text="VERDE", width= 15, command= ON_VERDE, background= "green")
-verde_boton.place(x=200, y=80)
+verde_boton.place(x=200, y=100)
 verde_boton = tk.Button(text="VERDE", width= 15, command= OFF_VERDE, background= "green")
 #LED AMARILLO
 amarillo_boton = tk.Button(text="AMARILLO", width= 15, command= ON_AMARILLO, background= "yellow")
-amarillo_boton.place(x=350, y=80)
+amarillo_boton.place(x=350, y=100)
 amarillo_boton = tk.Button(text="AMARILLO", width= 15, command= OFF_AMARILLO, background= "yellow")
 pantalla.mainloop()
         #ciclo infinito de la ventana
