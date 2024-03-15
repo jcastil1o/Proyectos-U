@@ -1,93 +1,70 @@
-"""
-import serial
-from time import sleep
-from tkinter import *
-
-estadoLed = 0
-
-def setup():
-    global puerto
-    puerto = serial.Serial(serial.list()[7], 9600)
-    sleep(2)  # Espera a que se establezca la conexión
-
-def draw():
-    global estadoLed
-    if estadoLed == 0:
-        fill(255, 0, 0)
-        canvas.create_oval(width/2 - 25, height/2 - 25, width/2 + 25, height/2 + 25, fill="red")
-    elif estadoLed == 1:
-        fill("#F4FFA5")
-        canvas.create_oval(width/2 - 22.5, height/2 - 22.5, width/2 + 22.5, height/2 + 22.5, fill="#F4FFA5")
-
-def mousePressed(event):
-    global estadoLed
-    if estadoLed == 0:
-        estadoLed = 1
-        puerto.write(b'1')
-    else:
-        estadoLed = 0
-        puerto.write(b'0')
-
-# Configuración de la ventana
-root = Tk()
-width = 200
-height = 200
-root.geometry(f"{width}x{height}")
-canvas = Canvas(root, width=width, height=height)
-canvas.pack()
-
-setup()
-
-canvas.bind("<Button-1>", mousePressed)
-
-while True:
-    draw()
-    root.update()
-    """
-#opcion 2
 import serial
 from serial.tools.list_ports import comports
 from time import sleep
 from tkinter import *
 from tkinter import Button
+#prueba 3
+import tkinter as tk
 
+    #libreria para la interfaz
+def ENCENDER():
+    #funcion encender
+    print("Encender todo")
+    puerto.write('1'.encode())
+    #comunicacion al puerto
 
-estadoLed = 0
+def APAGAR():
+    #funcion apagar
+    print("Apagar todo")
+    puerto.write('0'.encode())
+    #comunicacion al puerto
 
-def setup():
-    global puerto
-    puerto = serial.Serial(comports()[0].device, 9600)
-    sleep(2)  # Espera a que se establezca la conexión
+def ON_ROJO():
+    #funcion LED roja
+    print("Encender ROJO")
+    puerto.write('on rojo'.encode())
 
-def draw():
-    global estadoLed
-    canvas.delete("all")
-    if estadoLed == 0:
-        canvas.create_oval(width/2 - 25, height/2 - 25, width/2 + 25, height/2 + 25, fill="red")
-    elif estadoLed == 1:
-        canvas.create_oval(width/2 - 22.5, height/2 - 22.5, width/2 + 22.5, height/2 + 22.5, fill="#F4FFA5")
-    
+def OFF_ROJO():
+    #funcion LED roja
+    print("Apagar ROJO")
+    puerto.write('off rojo'.encode())
 
-def mousePressed(event):
-    global estadoLed
-    if estadoLed == 0:
-        estadoLed = 1
-        puerto.write(b'1')
-    else:
-        estadoLed = 0
-        puerto.write(b'0')
-    draw()
+def ON_VERDE():
+    #funcion LED verde
+    print("Encender VERDE")
+    puerto.write('on verde'.encode())
 
-# Configuración de la ventana
-root = Tk()
-width = 200
-height = 200
-root.geometry(f"{width}x{height}")
-canvas = Canvas(root, width=width, height=height)
-canvas.pack()
+def OFF_VERDE():
+    print("Apagar VERDE")
+    puerto.write('off verde'.encode())
 
-setup()
+def ON_AMARILLO():
+    print("Encender AMARILLO")
+    puerto.write('on amarillo'.encode())
 
-canvas.bind("<Button-1>", mousePressed)
+def OFF_AMARILLO():
+    print("Apagar AMARILLO")
+    puerto.write('off amarillo'.encode())
 
-root.mainloop()  # Mantén la aplicación en funcionamiento
+puerto = serial.Serial('COM7')
+#puerto a comunicar
+
+pantalla = tk.Tk()
+#pantalla a usar interfaz
+pantalla.config(width=500, height=300)
+#Tamano de pantalla
+pantalla.title("Controlar LEDs")
+#Titulo de pantalla
+
+#crear un boton de accion
+encender_boton  = tk.Button(text="ENCENDER", width= 10, command= ENCENDER, background="yellow")
+                    #tipo de boton  texto       tamano      accion
+encender_boton.place(x = 150, y = 10)
+#posicion del boton
+apagar_boton = tk.Button(text="APAGAR", width=10, command= APAGAR, background="gray")
+                    #tipo de boton  texto       tamano      accion
+apagar_boton.place(x= 250, y= 10)
+pantalla.mainloop()
+        #ciclo infinito de la ventana
+
+#puerto.close()
