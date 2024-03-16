@@ -62,7 +62,7 @@ titulo = Label(text="Encendido de LEDs", background="white", foreground= "black"
 titulo.place(x= 175, y=5)
 
 #crear un boton de accion
-encender_boton  = tk.Button(text="ENCENDER", width= 10, command= ENCENDER, background="yellow")
+encender_boton  = tk.Button(text="ENCENDER", width= 10, command= ENCENDER, background="orange")
                     #tipo de boton  texto       tamano      accion
 encender_boton.place(x = 175, y = 35)
 #posicion del boton
@@ -73,15 +73,12 @@ apagar_boton.place(x= 275, y= 35)
 #LED ROJA
 rojo_boton = tk.Button(text="ROJO", width= 15, command= ON_ROJO, background= "red")
 rojo_boton.place(x=50, y=100)
-rojo_boton = tk.Button(text="ROJO", width= 15, command= OFF_ROJO, background= "red")
 #LED VERDE
 verde_boton = tk.Button(text="VERDE", width= 15, command= ON_VERDE, background= "green")
 verde_boton.place(x=200, y=100)
-verde_boton = tk.Button(text="VERDE", width= 15, command= OFF_VERDE, background= "green")
 #LED AMARILLO
 amarillo_boton = tk.Button(text="AMARILLO", width= 15, command= ON_AMARILLO, background= "yellow")
 amarillo_boton.place(x=350, y=100)
-amarillo_boton = tk.Button(text="AMARILLO", width= 15, command= OFF_AMARILLO, background= "yellow")
 pantalla.mainloop()
         #ciclo infinito de la ventana
 #puerto.close()
