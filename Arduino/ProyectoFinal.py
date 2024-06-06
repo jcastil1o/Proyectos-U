@@ -1,5 +1,6 @@
 # Librerias para la conexion a Azure
 import pypyodbc as odbc #pip install pypyobdc
+import pyodbc as py
 import pandas as pd #pip install pandas
 # Librerias para la interfaz
 import tkinter as tk
@@ -11,10 +12,23 @@ from tkinter import Button
 # Lectura del puerto en tiempo real
 import threading
 import time
+
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+
+
 # Librerias para conexion SQL
-
 import mysql.connector #SQL
+"""
+server = 'progra3.database.windows.net' #conexion a servidor
+database = 'PARQUEO' #conexion a base de datos
+connection_string = 'Driver={ODBC Driver 18 for SQL Server};Server=tcp:progra3.database.windows.net,1433;Database=PARQUEO;Uid=jona1;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;' 
+#link a la conexion
+conn = odbc.connect(connection_string)
+#objeto de conexion a azure
 
+"""
 def leer_serial(puerto):
     # Configurar la conexión serial
     try:
