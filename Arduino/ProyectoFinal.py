@@ -132,7 +132,7 @@ def show_no_parking_message():
 def on_closing():
     if puerto.is_open:
         puerto.close()
-    root.destroy()
+    interfaz.destroy()
 
 # Función para abrir la talanquera
 def open_talanquera():
@@ -164,34 +164,43 @@ try:
     lectura.daemon = True
     lectura.start()
     # Configurar la ventana de tkinter
-    root = tk.Tk()
-    root.title("Sistema de Parqueos")
+    interfaz = tk.Tk()
+    interfaz.config(width=1000, height=1000, background= "dim gray")
+    interfaz.title("Proyecto Programación III")
 
 
-    title_label = tk.Label(root, text="Sistema de Gestión de Parqueos", font=("Helvetica", 18, "bold"))
-    title_label.pack(pady=30)
-    title_label = tk.Label(root, text="Grupo #6 , Programación III", font=("Helvetica", 14))
-    title_label.pack(pady=0)
+    title_label = tk.Label(interfaz, text="Sistema de Gestión de Parqueos", font=("Helvetica", 20, "bold"), background="dim gray")
+    title_label.place(x=100, y= 50)
+    title_label = tk.Label(interfaz, text="Grupo #6", font=("Helvetica", 18))
+    title_label.place(x=100, y=100)
 
-    label = tk.Label(root, text=f"Parqueos disponibles: {parking_slots}", font=("Helvetica", 16))
-    label.pack(pady=30)
+    if(parking_slots>0):
+        label = tk.Label(interfaz, text=f"Parqueos disponibles: {parking_slots}", font=("Helvetica", 18), background="spring green")
+        label.place(x=600, y=200)
+    if(parking_slots <1):
+        label = tk.Label(interfaz, text=f"Parqueos disponibles: {parking_slots}", font=("Helvetica", 18), background="red")
+        label.place(x=600, y=200)
 
-    title_label = tk.Label(root, text="Control Manual", font=("Helvetica", 14, "bold"))
-    title_label.pack(pady=0)
+    title_label = tk.Label(interfaz, text="Control Manual", font=("Helvetica", 16, "bold"), background="khaki")
+    title_label.place(x=100, y=400)
 
 
         # Añadir botones para abrir y cerrar la talanquera
-    open_button = tk.Button(root, text="Entrada", command=open_talanquera, font=("Helvetica", 14))
-    open_button.pack(pady=10)
+    open_button = tk.Button(interfaz, text="", command=open_talanquera, font=("Helvetica", 14), background="lawn green")
+    open_button.place(x=100, y=450)
+    entrada_label = tk.Label(interfaz, text = f"Entrada", font=("Helvetica", 14), background="dim gray")
+    entrada_label.place(x=75, y=475)
 
-    close_button = tk.Button(root, text="Salida", command=close_talanquera, font=("Helvetica", 14))
-    close_button.pack(pady=10)
+    close_button = tk.Button(interfaz, text="", command=close_talanquera, font=("Helvetica", 14), background="red")
+    close_button.place(x=200, y=450)
+    salida_label = tk.Label(interfaz, text = f"Salida", font=("Helvetica", 14), background="dim gray")
+    salida_label.place(x=200, y=475)
 
         # Manejar el cierre de la ventana
-    root.protocol("WM_DELETE_WINDOW", on_closing)
+    interfaz.protocol("WM_DELETE_WINDOW", on_closing)
 
         # Iniciar el loop de tkinter
-    root.mainloop()
+    interfaz.mainloop()
 
 except serial.SerialException as e:
     print(f"Error al abrir el puerto: {e}")
