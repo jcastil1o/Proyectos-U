@@ -197,16 +197,22 @@ try:
     salida_label.place(x=200, y=475)
     #Diseño de parqueo animado
     
-    canvas = tk.Canvas(interfaz, width=400, height=400, bg='white')
+    canvas = tk.Canvas(interfaz, width=500, height=500, bg='dim gray')
     canvas.pack()
-    canvas.place(x=600, y= 400)
+    canvas.place(x=400, y= 300)
    
     # Dibujar un rectángulo
-    canvas.create_rectangle(50, 50, 200, 150, fill='blue', outline='black')
-
+    
     # Dibujar un cuadrado
-    canvas.create_rectangle(250, 50, 350, 150, fill='green', outline='black')
+    canvas.create_rectangle(50, 50, 150, 150, fill='green', outline='dim gray')
+    canvas.create_rectangle(200, 50, 300, 150, fill='green', outline='dim gray')
+    canvas.create_rectangle(350, 50, 450, 150, fill='green', outline='dim gray')
+    canvas.create_rectangle(350, 200, 450, 300, fill='green', outline='dim gray')
+    canvas.create_rectangle(450, 200, 200, 200, fill='orange', outline='dim gray')
 
+     # Dibujar flechas
+    canvas.create_line(50, 200, 200, 200, arrow=tk.LAST, fill='yellow', width=3)
+    canvas.create_line(50, 250, 200, 250, arrow=tk.LAST, fill='yellow', width=3)
         # Manejar el cierre de la ventana
     interfaz.protocol("WM_DELETE_WINDOW", on_closing)
 
