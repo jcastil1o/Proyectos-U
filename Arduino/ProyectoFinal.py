@@ -156,8 +156,8 @@ def close_talanquera():
 
 puerto = None
 try:
-    puerto = serial.Serial('COM7', 9600, timeout=1)
-    print(f"Conectado a: {'COM7'}")
+    puerto = serial.Serial('COM10', 9600, timeout=1)
+    print(f"Conectado a: {'COM10'}")
     time.sleep(2)
 
     lectura = threading.Thread(target= leer_serial, args=(puerto,))
