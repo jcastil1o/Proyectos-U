@@ -195,6 +195,17 @@ try:
     close_button.place(x=200, y=450)
     salida_label = tk.Label(interfaz, text = f"Salida", font=("Helvetica", 14), background="dim gray")
     salida_label.place(x=200, y=475)
+    #Diseño de parqueo animado
+    
+    canvas = tk.Canvas(interfaz, width=400, height=400, bg='white')
+    canvas.pack()
+    canvas.place(x=600, y= 400)
+   
+    # Dibujar un rectángulo
+    canvas.create_rectangle(50, 50, 200, 150, fill='blue', outline='black')
+
+    # Dibujar un cuadrado
+    canvas.create_rectangle(250, 50, 350, 150, fill='green', outline='black')
 
         # Manejar el cierre de la ventana
     interfaz.protocol("WM_DELETE_WINDOW", on_closing)
