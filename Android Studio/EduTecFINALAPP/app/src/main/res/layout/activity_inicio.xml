@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inicio"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondoceleste"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/material_dynamic_secondary50"
+        android:hint="@string/button"
+        android:onClick="Registrar"
+        android:text="@string/button"
+        android:textColor="#455A64"
+        app:icon="@android:drawable/ic_lock_lock"
+        app:iconTint="@color/material_dynamic_secondary50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password"
+        app:layout_constraintVertical_bias="0.291"
+        tools:ignore="DuplicateSpeakableTextCheck,OnClick,UsingOnClickInXml" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="333dp"
+        android:layout_height="35dp"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="141dp"
+        android:layout_height="92dp"
+        android:contentDescription="@string/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.992"
+        app:srcCompat="@drawable/logo"
+        tools:ignore="ImageContrastCheck" />
+
+    <EditText
+        android:id="@+id/txt_nombre"
+        android:layout_width="228dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="484dp"
+        android:autofillHints=""
+        android:backgroundTint="@color/material_dynamic_secondary50"
+        android:backgroundTintMode="screen"
+        android:ems="10"
+        android:hint="@string/TextUser"
+        android:inputType="textPersonName"
+        android:textColorHint="#455A64"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_password"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/txt_password"
+        android:layout_width="231dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="146dp"
+        android:autofillHints=""
+        android:backgroundTint="@color/material_dynamic_secondary50"
+        android:backgroundTintMode="screen"
+        android:ems="10"
+        android:hint="@string/TextPassword"
+        android:inputType="textPassword"
+        android:textColorHint="#455A64"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nombre"
+        tools:ignore="TextContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
