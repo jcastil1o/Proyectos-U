@@ -1,7 +1,7 @@
-import serial
+import serial # type: ignore
 from time import sleep
 from tkinter import *
-from serial.tools.list_ports import comports
+from serial.tools.list_ports import comports # type: ignore
 
 estadoLed = 0
 
